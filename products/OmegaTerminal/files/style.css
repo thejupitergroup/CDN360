@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Omega Mono';
+    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/OmegaMono.ttf);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Omega Mono';
+    font-size: 20px;
+    background-color: #2d0922;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+::selection {
+    background-color: #ffffff;
+    color: #2d0922;
+}
+
+::-moz-selection {
+    background-color: #ffffff;
+    color: #2d0922;
+}
+
+.terminal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.terminal-header {
+    background-color: #2d0922;
+    padding: 2px;
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 2px;
+    overflow-y: auto;
+}
+
+.terminal-body hr {
+    border: 0;
+    border-top: 1px solid #8adf32;
+    margin: 10px 0;
+}
+
+.terminal-body::-webkit-scrollbar {
+    width: 12px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: #2d0922;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background-color: #8adf32;
+    border-radius: 10px;
+    border: 3px solid #2d0922;
+}
+
+.input-line {
+    padding-left: 2px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #2d0922;
+}
+
+.prompt {
+    color: #ffffff;
+    padding-right: 10px;
+}
+
+.user-text {
+    color: #8adf32;
+    padding-right: 1px;
+}
+
+.folder-text {
+    color: #719fcd;
+    padding-right: 2px;
+}
+
+.normal-text {
+    color: #ffffff;
+    padding-right: 1px;
+}
+
+.input-field {
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: 'Omega Mono';
+    font-size: 20px;
+    outline: none;
+    caret-color: #ffffff;
+}
