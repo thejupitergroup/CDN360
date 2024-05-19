@@ -98,13 +98,13 @@ html, body {
 .folder-text {
     font-family: 'Jupiter Mono Bold';
     color: #25a6e9;
-    padding-right: 0px;
+    padding-right: 0.6px;
 }
 
 .normal-text {
     font-family: 'Jupiter Mono Bold';
     color: #bfc7d2;
-    padding-right: 0.5px;
+    padding-right: 0px;
 }
 
 .input-field {
