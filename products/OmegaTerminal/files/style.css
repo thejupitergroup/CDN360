@@ -65,17 +65,14 @@ html, body {
     background-color: #bfc7d2;
     border-radius: 10px;
     border: 3px solid #10151d;
-    transition: background-color 1s ease-in-out, border-color 0.3s ease;
 }
 
 .terminal-body::-webkit-scrollbar-thumb:hover {
-    background-color: #5c4a8c; /* Change color on hover */
-    transition: background-color 1s ease-in-out, border-color 0.3s ease;
+    background-color: #5c4a8c;
 }
 
 .terminal-body::-webkit-scrollbar-thumb:active {
-    background-color: #17b877; /* Change color on click */
-    transition: background-color 1s ease-in-out, border-color 0.3s ease;
+    background-color: #17b877;
 }
 
 .input-line {
