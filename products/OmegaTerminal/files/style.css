@@ -92,18 +92,19 @@ html, body {
 .user-text {
     font-family: 'Jupiter Mono Bold';
     color: #17b877;
-    padding-right: 1px;
+    padding-right: 0px;
 }
 
 .folder-text {
     font-family: 'Jupiter Mono Bold';
     color: #25a6e9;
-    padding-right: 2px;
+    padding-right: 0px;
 }
 
 .normal-text {
+    font-family: 'Jupiter Mono Bold';
     color: #bfc7d2;
-    padding-right: 1px;
+    padding-right: 0px;
 }
 
 .input-field {
