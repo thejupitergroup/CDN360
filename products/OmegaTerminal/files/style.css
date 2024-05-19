@@ -104,7 +104,7 @@ html, body {
 .normal-text {
     font-family: 'Jupiter Mono Bold';
     color: #bfc7d2;
-    padding-right: 0px;
+    padding-right: 0.5px;
 }
 
 .input-field {
