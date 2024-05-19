@@ -68,11 +68,11 @@ html, body {
 }
 
 .terminal-body::-webkit-scrollbar-thumb:hover {
-    background-color: #b0b6c0;
+    background-color: #888d94;
 }
 
 .terminal-body::-webkit-scrollbar-thumb:active {
-    background-color: #b0b6c0;
+    background-color: #888d94;
 }
 
 .input-line {
