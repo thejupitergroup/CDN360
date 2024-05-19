@@ -1,18 +1,18 @@
 @font-face {
-    font-family: 'Omega Mono';
-    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/AthenaMono.ttf);
+    font-family: 'Jupiter Mono';
+    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/JupiterMono.ttf);
 }
 
 @font-face {
-    font-family: 'Omega Mono Bold';
-    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/AthenaMono.ttf);
+    font-family: 'Jupiter Mono Bold';
+    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/JupiterMono-Bold.ttf);
 }
 
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Omega Mono';
+    font-family: 'Jupiter Mono';
     font-size: 20px;
     background-color: #10151d;
     color: #bfc7d2;
@@ -90,11 +90,13 @@ html, body {
 }
 
 .user-text {
+    font-family: 'Jupiter Mono Bold';
     color: #17b877;
     padding-right: 1px;
 }
 
 .folder-text {
+    font-family: 'Jupiter Mono Bold';
     color: #25a6e9;
     padding-right: 2px;
 }
@@ -109,7 +111,7 @@ html, body {
     background-color: transparent;
     border: none;
     color: #bfc7d2;
-    font-family: 'Omega Mono';
+    font-family: 'Jupiter Mono';
     font-size: 20px;
     outline: none;
     caret-color: #bfc7d2;
