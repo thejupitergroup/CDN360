@@ -1,6 +1,11 @@
 @font-face {
     font-family: 'Omega Mono';
-    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/Source.ttf);
+    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/AthenaMono.ttf);
+}
+
+@font-face {
+    font-family: 'Omega Mono Bold';
+    src: url(https://cdn360.pages.dev/products/OmegaTerminal/fonts/AthenaMono.ttf);
 }
 
 html, body {
@@ -15,13 +20,13 @@ html, body {
 }
 
 ::selection {
-    background-color: #ffffff;
-    color: #2d0922;
+    background-color: #5c4a8c;
+    color: #fff;
 }
 
 ::-moz-selection {
-    background-color: #ffffff;
-    color: #2d0922;
+    background-color: #5c4a8c;
+    color: #fff;
 }
 
 .terminal {
