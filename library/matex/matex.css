@@ -2,7 +2,7 @@
   font-family: 'MaTeX_Whitaker';
   src: url(./fonts/MaTeX_Math-Italic.ttf);
   font-weight: normal;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
