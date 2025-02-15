@@ -1,0 +1,646 @@
+
+
+/* required styles */
+
+.maptrix-pane,
+.maptrix-tile,
+.maptrix-marker-icon,
+.maptrix-marker-shadow,
+.maptrix-tile-container,
+.maptrix-pane > svg,
+.maptrix-pane > canvas,
+.maptrix-zoom-box,
+.maptrix-image-layer,
+.maptrix-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+.maptrix-container {
+	overflow: hidden;
+	}
+.maptrix-tile,
+.maptrix-marker-icon,
+.maptrix-marker-shadow {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	        user-select: none;
+	  -webkit-user-drag: none;
+	}
+/* Prevents IE11 from highlighting tiles in blue */
+.maptrix-tile::selection {
+	background: transparent;
+}
+/* Safari renders non-retina tile on retina better with this, but Chrome is worse */
+.maptrix-safari .maptrix-tile {
+	image-rendering: -webkit-optimize-contrast;
+	}
+/* hack that prevents hw layers "stretching" when loading new tiles */
+.maptrix-safari .maptrix-tile-container {
+	width: 1600px;
+	height: 1600px;
+    transform-origin: 0 0;
+	-webkit-transform-origin: 0 0;
+	}
+.maptrix-marker-icon,
+.maptrix-marker-shadow {
+	display: block;
+	}
+/* .maptrix-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */
+/* .maptrix-container img: map is broken in FF if you have max-width: 100% on tiles */
+.maptrix-container .maptrix-overlay-pane svg,
+.maptrix-container .maptrix-marker-pane img,
+.maptrix-container .maptrix-shadow-pane img,
+.maptrix-container .maptrix-tile-pane img,
+.maptrix-container img.maptrix-image-layer,
+.maptrix-container .maptrix-tile {
+	max-width: none !important;
+	max-height: none !important;
+	}
+
+.maptrix-container.maptrix-touch-zoom {
+	-ms-touch-action: pan-x pan-y;
+	touch-action: pan-x pan-y;
+	}
+.maptrix-container.maptrix-touch-drag {
+	-ms-touch-action: pinch-zoom;
+	/* Fallback for FF which doesn't support pinch-zoom */
+	touch-action: none;
+	touch-action: pinch-zoom;
+}
+.maptrix-container.maptrix-touch-drag.maptrix-touch-zoom {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.maptrix-container {
+	-webkit-tap-highlight-color: transparent;
+}
+.maptrix-container a {
+	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+}
+.maptrix-tile {
+	filter: inherit;
+	visibility: hidden;
+	}
+.maptrix-tile-loaded {
+	visibility: inherit;
+	}
+.maptrix-zoom-box {
+	width: 0;
+	height: 0;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	z-index: 800;
+	}
+/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
+.maptrix-overlay-pane svg {
+    user-select: none;
+	-moz-user-select: none;
+	}
+
+.maptrix-pane         { z-index: 400; }
+
+.maptrix-tile-pane    { z-index: 200; }
+.maptrix-overlay-pane { z-index: 400; }
+.maptrix-shadow-pane  { z-index: 500; }
+.maptrix-marker-pane  { z-index: 600; }
+.maptrix-tooltip-pane   { z-index: 650; }
+.maptrix-popup-pane   { z-index: 700; }
+
+.maptrix-map-pane canvas { z-index: 100; }
+.maptrix-map-pane svg    { z-index: 200; }
+
+.maptrix-vml-shape {
+	width: 1px;
+	height: 1px;
+	}
+.lvml {
+	behavior: url(#default#VML);
+	display: inline-block;
+	position: absolute;
+	}
+
+
+/* control positioning */
+
+.maptrix-control {
+	position: relative;
+	z-index: 800;
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+.maptrix-top,
+.maptrix-bottom {
+	position: absolute;
+	z-index: 1000;
+	pointer-events: none;
+	}
+.maptrix-top {
+	top: 0;
+	}
+.maptrix-right {
+	right: 0;
+	}
+.maptrix-bottom {
+	bottom: 0;
+	}
+.maptrix-left {
+	left: 0;
+	}
+.maptrix-control {
+	float: left;
+	clear: both;
+	}
+.maptrix-right .maptrix-control {
+	float: right;
+	}
+.maptrix-top .maptrix-control {
+	margin-top: 10px;
+	}
+.maptrix-bottom .maptrix-control {
+	margin-bottom: 10px;
+	}
+.maptrix-left .maptrix-control {
+	margin-left: 10px;
+	}
+.maptrix-right .maptrix-control {
+	margin-right: 10px;
+	}
+
+
+/* zoom and fade animations */
+
+.maptrix-fade-anim .maptrix-tile {
+	will-change: opacity;
+	}
+.maptrix-fade-anim .maptrix-popup {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s linear;
+	   -moz-transition: opacity 0.2s linear;
+	        transition: opacity 0.2s linear;
+	}
+.maptrix-fade-anim .maptrix-map-pane .maptrix-popup {
+	opacity: 1;
+	}
+.maptrix-zoom-animated {
+	-webkit-transform-origin: 0 0;
+	    -ms-transform-origin: 0 0;
+	        transform-origin: 0 0;
+	}
+.maptrix-zoom-anim .maptrix-zoom-animated {
+	will-change: transform;
+	}
+.maptrix-zoom-anim .maptrix-zoom-animated {
+	-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);
+	   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);
+	        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);
+	}
+.maptrix-zoom-anim .maptrix-tile,
+.maptrix-pan-anim .maptrix-tile {
+	-webkit-transition: none;
+	   -moz-transition: none;
+	        transition: none;
+	}
+
+.maptrix-zoom-anim .maptrix-zoom-hide {
+	visibility: hidden;
+	}
+
+
+/* cursors */
+
+.maptrix-interactive {
+	cursor: pointer;
+	}
+.maptrix-grab {
+	cursor: -webkit-grab;
+	cursor:    -moz-grab;
+	cursor:         grab;
+	}
+.maptrix-crosshair,
+.maptrix-crosshair .maptrix-interactive {
+	cursor: crosshair;
+	}
+.maptrix-popup-pane,
+.maptrix-control {
+	cursor: auto;
+	}
+.maptrix-dragging .maptrix-grab,
+.maptrix-dragging .maptrix-grab .maptrix-interactive,
+.maptrix-dragging .maptrix-marker-draggable {
+	cursor: move;
+	cursor: -webkit-grabbing;
+	cursor:    -moz-grabbing;
+	cursor:         grabbing;
+	}
+
+/* marker & overlays interactivity */
+.maptrix-marker-icon,
+.maptrix-marker-shadow,
+.maptrix-image-layer,
+.maptrix-pane > svg path,
+.maptrix-tile-container {
+	pointer-events: none;
+	}
+
+.maptrix-marker-icon.maptrix-interactive,
+.maptrix-image-layer.maptrix-interactive,
+.maptrix-pane > svg path.maptrix-interactive,
+svg.maptrix-image-layer.maptrix-interactive path {
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+
+/* visual tweaks */
+
+.maptrix-container {
+	background: #ddd;
+	outline: 0;
+	}
+.maptrix-container a {
+	color: #0078A8;
+	}
+.maptrix-container a.maptrix-active {
+	outline: 2px solid orange;
+	}
+.maptrix-zoom-box {
+	border: 2px dotted #38f;
+	background: rgba(255,255,255,0.5);
+	}
+
+
+/* general typography */
+.maptrix-container {
+	font: 12px/1.5 "Rubisco Sans", Arial, Helvetica, sans-serif;
+	}
+
+
+/* general toolbar styles */
+
+.maptrix-bar {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	border-radius: 4px;
+	}
+.maptrix-bar a,
+.maptrix-bar a:hover {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	}
+.maptrix-bar a,
+.maptrix-control-layers-toggle {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: block;
+	}
+.maptrix-bar a:hover {
+	background-color: #f4f4f4;
+	}
+.maptrix-bar a:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	}
+.maptrix-bar a:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom: none;
+	}
+.maptrix-bar a.maptrix-disabled {
+	cursor: default;
+	background-color: #f4f4f4;
+	color: #bbb;
+	}
+
+.maptrix-touch .maptrix-bar a {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	}
+.maptrix-touch .maptrix-bar a:first-child {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	}
+.maptrix-touch .maptrix-bar a:last-child {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	}
+
+/* zoom control */
+
+.maptrix-control-zoom-in,
+.maptrix-control-zoom-out {
+	font: 18px 'Andorra Mono', 'Lucida Console', Monaco, monospace;
+	/* font: bold 18px 'Lucida Console', Monaco, monospace; */
+	text-indent: 1px;
+	}
+
+.maptrix-touch .maptrix-control-zoom-in, .maptrix-touch .maptrix-control-zoom-out  {
+	font-size: 22px;
+	}
+
+
+/* layers control */
+
+.maptrix-control-layers {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	background: #fff;
+	border-radius: 5px;
+	}
+.maptrix-control-layers-toggle {
+	background-image: url(images/layers.png);
+	width: 36px;
+	height: 36px;
+	}
+.maptrix-retina .maptrix-control-layers-toggle {
+	background-image: url(images/layers-2x.png);
+	background-size: 26px 26px;
+	}
+.maptrix-touch .maptrix-control-layers-toggle {
+	width: 44px;
+	height: 44px;
+	}
+.maptrix-control-layers .maptrix-control-layers-list,
+.maptrix-control-layers-expanded .maptrix-control-layers-toggle {
+	display: none;
+	}
+.maptrix-control-layers-expanded .maptrix-control-layers-list {
+	display: block;
+	position: relative;
+	}
+.maptrix-control-layers-expanded {
+	padding: 6px 10px 6px 6px;
+	color: #333;
+	background: #fff;
+	}
+.maptrix-control-layers-scrollbar {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 5px;
+	}
+.maptrix-control-layers-selector {
+	margin-top: 2px;
+	position: relative;
+	top: 1px;
+	}
+.maptrix-control-layers label {
+	display: block;
+	}
+.maptrix-control-layers-separator {
+	height: 0;
+	border-top: 1px solid #ddd;
+	margin: 5px -10px 5px -6px;
+	}
+
+/* Default icon URLs */
+.maptrix-default-icon-path {
+	background-image: url(images/marker-icon.png);
+	}
+
+
+/* attribution and scale controls */
+
+.maptrix-container .maptrix-control-attribution {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.7);
+	margin: 0;
+	}
+.maptrix-control-attribution,
+.maptrix-control-scale-line {
+	padding: 0 5px;
+	color: #333;
+	}
+.maptrix-control-attribution a {
+	text-decoration: none;
+	}
+.maptrix-control-attribution a:hover {
+	text-decoration: underline;
+	}
+.maptrix-container .maptrix-control-attribution,
+.maptrix-container .maptrix-control-scale {
+	font-size: 11px;
+	}
+.maptrix-left .maptrix-control-scale {
+	margin-left: 5px;
+	}
+.maptrix-bottom .maptrix-control-scale {
+	margin-bottom: 5px;
+	}
+.maptrix-control-scale-line {
+	border: 2px solid #777;
+	border-top: none;
+	line-height: 1.1;
+	padding: 2px 5px 1px;
+	font-size: 11px;
+	white-space: nowrap;
+	overflow: hidden;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+
+	background: #fff;
+	background: rgba(255, 255, 255, 0.5);
+	}
+.maptrix-control-scale-line:not(:first-child) {
+	border-top: 2px solid #777;
+	border-bottom: none;
+	margin-top: -2px;
+	}
+.maptrix-control-scale-line:not(:first-child):not(:last-child) {
+	border-bottom: 2px solid #777;
+	}
+
+.maptrix-touch .maptrix-control-attribution,
+.maptrix-touch .maptrix-control-layers,
+.maptrix-touch .maptrix-bar {
+	box-shadow: none;
+	}
+.maptrix-touch .maptrix-control-layers,
+.maptrix-touch .maptrix-bar {
+	border: 2px solid rgba(0,0,0,0.2);
+	background-clip: padding-box;
+	}
+
+
+/* popup */
+
+.maptrix-popup {
+	position: absolute;
+	text-align: center;
+	margin-bottom: 20px;
+	}
+.maptrix-popup-content-wrapper {
+	padding: 1px;
+	text-align: left;
+	border-radius: 12px;
+	}
+.maptrix-popup-content {
+	margin: 13px 19px;
+	line-height: 1.4;
+	}
+.maptrix-popup-content p {
+	margin: 18px 0;
+	}
+.maptrix-popup-tip-container {
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	margin-left: -20px;
+	overflow: hidden;
+	pointer-events: none;
+	}
+.maptrix-popup-tip {
+	width: 17px;
+	height: 17px;
+	padding: 1px;
+
+	margin: -10px auto 0;
+
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	}
+.maptrix-popup-content-wrapper,
+.maptrix-popup-tip {
+	background: white;
+	color: #333;
+	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	}
+.maptrix-container a.maptrix-popup-close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 4px 4px 0 0;
+	border: none;
+	text-align: center;
+	width: 18px;
+	height: 14px;
+	font: 16px/14px 'Rubisco Sans', Tahoma, Verdana, sans-serif;
+	color: #c3c3c3;
+	text-decoration: none;
+	font-weight: bold;
+	background: transparent;
+	}
+.maptrix-container a.maptrix-popup-close-button:hover {
+	color: #999;
+	}
+.maptrix-popup-scrolled {
+	overflow: auto;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	}
+
+.maptrix-oldie .maptrix-popup-content-wrapper {
+    zoom: 1;
+	-ms-zoom: 1;
+	}
+.maptrix-oldie .maptrix-popup-tip {
+	width: 24px;
+	margin: 0 auto;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);
+	}
+.maptrix-oldie .maptrix-popup-tip-container {
+	margin-top: -1px;
+	}
+
+.maptrix-oldie .maptrix-control-zoom,
+.maptrix-oldie .maptrix-control-layers,
+.maptrix-oldie .maptrix-popup-content-wrapper,
+.maptrix-oldie .maptrix-popup-tip {
+	border: 1px solid #999;
+	}
+
+
+/* div icon */
+
+.maptrix-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+	}
+
+
+/* Tooltip */
+/* Base styles for the element that has a tooltip */
+.maptrix-tooltip {
+	position: absolute;
+	padding: 6px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	color: #222;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+	}
+.maptrix-tooltip.maptrix-clickable {
+	cursor: pointer;
+	pointer-events: auto;
+	}
+.maptrix-tooltip-top:before,
+.maptrix-tooltip-bottom:before,
+.maptrix-tooltip-left:before,
+.maptrix-tooltip-right:before {
+	position: absolute;
+	pointer-events: none;
+	border: 6px solid transparent;
+	background: transparent;
+	content: "";
+	}
+
+/* Directions */
+
+.maptrix-tooltip-bottom {
+	margin-top: 6px;
+}
+.maptrix-tooltip-top {
+	margin-top: -6px;
+}
+.maptrix-tooltip-bottom:before,
+.maptrix-tooltip-top:before {
+	left: 50%;
+	margin-left: -6px;
+	}
+.maptrix-tooltip-top:before {
+	bottom: 0;
+	margin-bottom: -12px;
+	border-top-color: #fff;
+	}
+.maptrix-tooltip-bottom:before {
+	top: 0;
+	margin-top: -12px;
+	margin-left: -6px;
+	border-bottom-color: #fff;
+	}
+.maptrix-tooltip-left {
+	margin-left: -6px;
+}
+.maptrix-tooltip-right {
+	margin-left: 6px;
+}
+.maptrix-tooltip-left:before,
+.maptrix-tooltip-right:before {
+	top: 50%;
+	margin-top: -6px;
+	}
+.maptrix-tooltip-left:before {
+	right: 0;
+	margin-right: -12px;
+	border-left-color: #fff;
+	}
+.maptrix-tooltip-right:before {
+	left: 0;
+	margin-left: -12px;
+	border-right-color: #fff;
+	}
