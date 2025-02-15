@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDN File Explorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        #file-tree {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .folder, .file {
+            margin: 5px 0;
+            padding: 5px;
+        }
+        .folder {
+            font-weight: bold;
+            cursor: pointer;
+            color: #0275d8;
+        }
+        .folder::before {
+            content: "📁 ";
+        }
+        .file::before {
+            content: "📄 ";
+        }
+        .nested {
+            margin-left: 20px;
+            display: none;
+        }
+        .open > .nested {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CDN File Explorer</h2>
+    <div id="file-tree">Loading...</div>
+
+    <script>
+        const CDN_URL = "https://your-cdn.com/files.json"; // Change this to your CDN file listing API
+        
+        async function fetchFileStructure() {
+            try {
+                let response = await fetch(CDN_URL);
+                let data = await response.json(); // Assuming the CDN provides a JSON structure
+                document.getElementById('file-tree').innerHTML = renderTree(data);
+            } catch (error) {
+                document.getElementById('file-tree').innerHTML = "<p>Error loading file structure.</p>";
+            }
+        }
+
+        function renderTree(data, nested = false) {
+            let html = nested ? '<div class="nested">' : '<div>';
+            for (let item of data) {
+                if (item.type === "folder") {
+                    html += `<div class="folder" onclick="toggleFolder(event)">${item.name}${renderTree(item.children, true)}</div>`;
+                } else {
+                    html += `<div class="file"><a href="${item.url}" target="_blank">${item.name}</a></div>`;
+                }
+            }
+            return html + '</div>';
+        }
+
+        function toggleFolder(event) {
+            event.stopPropagation();
+            event.currentTarget.classList.toggle("open");
+        }
+
+        fetchFileStructure();
+    </script>
+
+</body>
+</html>

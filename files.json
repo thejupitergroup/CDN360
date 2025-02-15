@@ -1,0 +1,7 @@
+[
+    { "type": "folder", "name": "images", "children": [
+        { "type": "file", "name": "logo.png", "url": "https://your-cdn.com/images/logo.png" }
+    ]},
+    { "type": "file", "name": "index.html", "url": "https://your-cdn.com/index.html" }
+  ]
+  
