@@ -6999,8 +6999,8 @@
   })(this);
   
   },{}],5:[function(require,module,exports){
-  module.exports = require('https://cdn360.pages.dev/library/rubisco/matherator/lib//core/core');
-  },{"https://cdn360.pages.dev/library/rubisco/matherator/lib//core/core":8}],6:[function(require,module,exports){
+  module.exports = require('https://cdn360.pages.dev/library/rubisco/matherator/lib/core/core');
+  },{"https://cdn360.pages.dev/library/rubisco/matherator/lib/core/core":8}],6:[function(require,module,exports){
   var core = require('./core');
   
   /**
@@ -7032,7 +7032,7 @@
     math.create = create;
   
     // import data types, functions, constants, expression parser, etc.
-    math['import'](require('https://cdn360.pages.dev/library/rubisco/matherator/lib/'));
+    math['import'](require('https://cdn360.pages.dev/library/rubisco/matherator/lib'));
   
     return math;
   }
@@ -7040,7 +7040,7 @@
   // return a new instance of math.js
   module.exports = create();
   
-  },{"./core":5,"https://cdn360.pages.dev/library/rubisco/matherator/lib/":420}],7:[function(require,module,exports){
+  },{"./core":5,"https://cdn360.pages.dev/library/rubisco/matherator/lib":420}],7:[function(require,module,exports){
   'use strict';
   
   var object = require('./utils/object');
@@ -50934,9 +50934,9 @@
   // Changes made in this file will be overwritten.
   
   },{}],501:[function(require,module,exports){
-  const simplifyExpression = require('https://cdn360.pages.dev/library/rubisco/matherator/lib//simplifyExpression/index.js');
-  const solveEquation = require('https://cdn360.pages.dev/library/rubisco/matherator/lib//solveEquation/index.js');
-  const ChangeTypes = require('https://cdn360.pages.dev/library/rubisco/matherator/lib//ChangeTypes.js');
+  const simplifyExpression = require('https://cdn360.pages.dev/library/rubisco/matherator/lib/simplifyExpression/index.js');
+  const solveEquation = require('https://cdn360.pages.dev/library/rubisco/matherator/lib/solveEquation/index.js');
+  const ChangeTypes = require('https://cdn360.pages.dev/library/rubisco/matherator/lib/ChangeTypes.js');
   
   module.exports = {
     simplifyExpression,
@@ -50944,7 +50944,7 @@
     ChangeTypes,
   };
   
-  },{"https://cdn360.pages.dev/library/rubisco/matherator/lib//ChangeTypes":502,"https://cdn360.pages.dev/library/rubisco/matherator/lib//simplifyExpression":552,"https://cdn360.pages.dev/library/rubisco/matherator/lib//solveEquation":556}],502:[function(require,module,exports){
+  },{"https://cdn360.pages.dev/library/rubisco/matherator/lib/ChangeTypes":502,"https://cdn360.pages.dev/library/rubisco/matherator/lib/simplifyExpression":552,"https://cdn360.pages.dev/library/rubisco/matherator/lib/solveEquation":556}],502:[function(require,module,exports){
   // The text to identify rules for each possible step that can be taken
   
   module.exports = {
