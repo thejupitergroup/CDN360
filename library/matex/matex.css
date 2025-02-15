@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'MaTeX_Whitaker';
+  src: url(./fonts/MaTeX_Math-Italic.ttf);
+  font-weight: normal;
+  font-style: italic;
+}
+
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
   font-family: 'MaTeX_AMS';
@@ -167,7 +174,7 @@
   font-style: italic;
 }
 .matex .textrm {
-  font-family: MaTeX_Main;
+  font-family: MaTeX_Whitaker, MaTeX_Main;
 }
 .matex .textsf {
   font-family: MaTeX_SansSerif;
@@ -176,22 +183,22 @@
   font-family: MaTeX_Typewriter;
 }
 .matex .mathnormal {
-  font-family: MaTeX_Math;
+  font-family: MaTeX_Whitaker, MaTeX_Math;
   font-style: italic;
 }
 .matex .mathit {
-  font-family: MaTeX_Main;
+  font-family: MaTeX_Whitaker, MaTeX_Main;
   font-style: italic;
 }
 .matex .mathrm {
   font-style: normal;
 }
 .matex .mathbf {
-  font-family: MaTeX_Main;
+  font-family: MaTeX_Whitaker, MaTeX_Main;
   font-weight: bold;
 }
 .matex .boldsymbol {
-  font-family: MaTeX_Math;
+  font-family: MaTeX_Whitaker, MaTeX_Math;
   font-weight: bold;
   font-style: italic;
 }
@@ -231,7 +238,7 @@
   font-style: italic;
 }
 .matex .mainrm {
-  font-family: MaTeX_Main;
+  font-family: MaTeX_Whitaker, MaTeX_Main;
   font-style: normal;
 }
 .matex .vlist-t {
