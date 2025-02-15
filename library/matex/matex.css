@@ -127,7 +127,7 @@
   font-style: normal;
 }
 .matex {
-  font: normal 1.21em MaTeX_Main, Times New Roman, serif;
+  font: normal 1.21em MaTeX_Whitaker, MaTeX_Main, Times New Roman, serif;
   line-height: 1.2;
   text-indent: 0;
   text-rendering: auto;
