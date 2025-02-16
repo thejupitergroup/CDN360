@@ -102,7 +102,7 @@ code {
     font-size: 0.95em;
     background: #f8f9fa;
     border-radius: 4px;
-    border: 1px solid #dadde3;
+    /* border: 1px solid #dadde3; */
     padding: 2px 5px;
 }
 
