@@ -289,17 +289,14 @@
 
 /* FONTS */
 
+@import url(https://vortixsys.pages.dev/fonts/library.css);
+
 @font-face {
 	font-display: block;
 	font-family: codicon;
 	src: url(../base/browser/ui/codicons/codicon/codicon.ttf) format("truetype")
 }
 
-@font-face {
-	font-display: block;
-	font-family: 'monde';
-	src: url(./EvermoreMonde.ttf) format("truetype")
-}
 
 @font-face {
 	font-display: block;
@@ -354,7 +351,7 @@
 .context-view.fixed {
 	all: initial;
 	color: inherit;
-	font-family: 'monde';
+	font-family: 'Sevolt UI';
 	font-size: 13px;
 	position: fixed
 }
@@ -816,7 +813,7 @@
 	box-sizing: border-box;
 	color: inherit;
 	display: inline-block;
-	font-family: 'monde';
+	font-family: 'Sevolt UI';
 	font-size: inherit;
 	height: 100%;
 	line-height: inherit;
@@ -5491,7 +5488,7 @@
 }
 
 .andorra-editor {
-	font-family: 'monde', -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, system-ui, Ubuntu, Droid Sans, sans-serif;
+	font-family: 'Sevolt UI', -apple-system, BlinkMacSystemFont, Segoe WPC, Segoe UI, HelveticaNeue-Light, system-ui, Ubuntu, Droid Sans, sans-serif;
 	--andorra-monospace-font: 'konsolium', "SF Mono", Andorra, Menlo, Consolas, "Ubuntu Mono", "Liberation Mono", "DejaVu Sans Mono", "Courier New", monospace
 }
 
