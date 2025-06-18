@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quadratic Formula Explained</title>
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="./matex.css" />
+  <!-- KaTeX Auto-render Extension -->
+  <script defer src="./matex.js"></script>
+  <script defer src="./render.js"
+    onload="renderMathInElement(document.body);"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1 {
+      color: #2c3e50;
+    }
+
+    .formula {
+      background: #fff;
+      padding: 1em;
+      border-left: 4px solid #3498db;
+      margin: 1em 0;
+      font-size: 1.2em;
+    }
+
+    code {
+      background: #e0e0e0;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Understanding the Quadratic Formula</h1>
+
+  <p>
+    The quadratic formula is used to find the solutions (or roots) of a quadratic equation of the form:
+  </p>
+
+  <div class="formula">
+    \( ax^2 + bx + c = 0 \)
+  </div>
+
+  <p>
+    The formula to find the roots is:
+  </p>
+
+  <div class="formula">
+    \[
+    x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+    \]
+  </div>
+
+  <p>
+    Here's what each part represents:
+    <ul>
+      <li><code>a</code>, <code>b</code>, and <code>c</code> are coefficients from the quadratic equation.</li>
+      <li>\( \sqrt{b^2 - 4ac} \) is called the <strong>discriminant</strong>.</li>
+      <li>The \( \pm \) symbol means there are generally two solutions: one with + and one with -.</li>
+    </ul>
+  </p>
+
+  <p>
+    For example, if we have the equation \( 2x^2 + 4x - 6 = 0 \), we plug in the values:
+  </p>
+
+  <div class="formula">
+    \[
+    x = \frac{-4 \pm \sqrt{(4)^2 - 4(2)(-6)}}{2(2)} = \frac{-4 \pm \sqrt{64}}{4} = \frac{-4 \pm 8}{4}
+    \]
+  </div>
+
+  <p>
+    So the two solutions are \( x = 1 \) and \( x = -3 \). \(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)
+  </p>
+</body>
+</html>

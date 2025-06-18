@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Sevolt UI';
+    src: url(./SevoltUI-Light.ttf);
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Sevolt UI';
+    src: url(./SevoltUI-Semilight.ttf);
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Sevolt UI';
+    src: url(./SevoltUI-Regular.ttf);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Sevolt UI';
+    src: url(./SevoltUI-Semibold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Sevolt UI';
+    src: url(./SevoltUI-Bold.ttf);
+    font-weight: 700;
+}
