@@ -1,0 +1,165 @@
+/* Advanced Gothic */
+@font-face {
+    font-family: 'Advanced Gothic';
+    src: url(./files/AdvancedGothic-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Advanced Gothic';
+    src: url(./files/AdvancedGothic-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Advanced Gothic';
+    src: url(./files/AdvancedGothic-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Advanced Gothic';
+    src: url(./files/AdvancedGothic-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Roadway */
+@font-face {
+    font-family: 'Roadway';
+    src: url(./files/Roadway-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roadway';
+    src: url(./files/Roadway-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roadway';
+    src: url(./files/Roadway-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roadway';
+    src: url(./files/Roadway-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Kadell */
+@font-face {
+    font-family: 'Kadell';
+    src: url(./files/Kadell-Black.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Game Trust Cardplay */
+@font-face {
+    font-family: 'Game Trust Cardplay';
+    src: url(./files/GameTrustCardplay-Regular1.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Spike Gothic */
+@font-face {
+    font-family: 'Spike Gothic';
+    src: url(./files/SpikeGothic-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Spike Gothic';
+    src: url(./files/SpikeGothic-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Spike Gothic';
+    src: url(./files/SpikeGothic-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Winchell Sans */
+@font-face {
+    font-family: 'Winchell Sans';
+    src: url(./files/WinchellSans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Winchell Sans';
+    src: url(./files/WinchellSans-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Winchell Sans';
+    src: url(./files/WinchellSans-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Winchell Sans';
+    src: url(./files/WinchellSans-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Winchell Sans Condensed */
+@font-face {
+    font-family: 'Winchell Sans Condensed';
+    src: url(./files/WinchellSansCond-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Winchell Sans Condensed';
+    src: url(./files/WinchellSansCond-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Winchell Sans Condensed';
+    src: url(./files/WinchellSansCond-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Winchell Sans Condensed';
+    src: url(./files/WinchellSansCond-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Worcester */
+@font-face {
+    font-family: 'Worcester';
+    src: url(./files/Worcester-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Worcester';
+    src: url(./files/Worcester-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Worcester';
+    src: url(./files/Worcester-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Worcester';
+    src: url(./files/Worcester-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
