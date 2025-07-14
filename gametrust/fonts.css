@@ -163,3 +163,11 @@
     font-weight: 700;
     font-style: italic;
 }
+
+/* Circlis Family */
+@font-face {
+    font-family: 'Circlis Display';
+    src: url(./files/CirclisDisplay-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
