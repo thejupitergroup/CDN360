@@ -171,3 +171,9 @@
     font-weight: 900;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Circlis UI';
+    src: url(./files/CirclisUI-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
