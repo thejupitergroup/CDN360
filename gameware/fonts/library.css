@@ -1,0 +1,49 @@
+/* Barclay Sans */
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-Italic.ttf);
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-SemiBold.ttf);
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-SemiBoldItalic.ttf);
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-BoldItalic.ttf);
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Barclay Sans';
+    src: url(./BarclaySans-BlackItalic.ttf);
+    font-weight: 900;
+    font-style: italic;
+}
